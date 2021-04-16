@@ -1,0 +1,22 @@
+.select .main {
+    border: 3px solid black;
+    display: inline-block; /*ему нелья задавать высоту и ширину и манипулировать норм им*/
+    min-height: 20px;
+    min-width: 40px;
+}
+
+
+
+.items {
+   /* display: none;*/ /*не видно на дисплее*/
+    position: absolute; /*контент накладывается сверху, не отодвигаю никого*/
+    padding: 5px;
+    border: 3px solid red;
+}
+.item.selected {
+    background-color: lightskyblue;
+    color: #0f2b48;
+
+}
+
+
