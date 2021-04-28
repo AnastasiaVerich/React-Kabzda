@@ -4,7 +4,7 @@ import React, {useState} from "react";
 export function RaitingSelf() {
     let [rei, setRei] = useState(0)
     return (
-        <div>
+        <div>  {console.log("raitingSELF")}
             <Star selected={rei > 0} onClick={() => {
                 setRei(1)
             }}/>
@@ -30,6 +30,5 @@ type StarProps = {
 }
 
 function Star(props: StarProps) {
-    console.log("Star count")
     return <span onClick={props.onClick}>{props.selected ? <b>star </b>: 'star '}</span>
 }

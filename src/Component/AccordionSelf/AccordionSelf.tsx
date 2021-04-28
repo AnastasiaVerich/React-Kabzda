@@ -2,13 +2,14 @@ import React, {useReducer} from "react";
 import {AccordionProps, reduce} from "./Reducer";
 
 export function AccordionSelf(props: AccordionProps) {
-    console.log("1")
    // let [on, setOn] = useState(false)
     let [state, dispatch] = useReducer(reduce,{on:false})
 
 
     return (
+
         <div>
+            {console.log("accordionSELF")}
            {/* <AccordionTitle title={props.text} onClick={() => {setOn(!on)}}/>*/}
             <AccordionTitle title={props.text} onClick={()=>{
                 dispatch({type: "KKK"})}}/>
@@ -24,14 +25,13 @@ type AccordionTitleProps = {
 }
 
 function AccordionTitle(props: AccordionTitleProps) {
-    console.log("2")
+
     return (
         <h3 onClick={props.onClick}>{props.title}</h3>
     )
 }
 
 function AccordionBody() {
-    console.log("3")
     return (
         <div>
             <ul>

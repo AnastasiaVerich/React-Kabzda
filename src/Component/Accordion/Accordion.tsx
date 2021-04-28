@@ -22,10 +22,14 @@ export type AccordionProps = {
     onClick: (v: any)=> void
 }
 
-export function Accordion(props: AccordionProps) {
+
+
+ export function Accordion(props: AccordionProps) {
 
     return (
+
         <div>
+            {console.log("accordion")}
             <AccordionTitle title={props.text}
                             onChange={() => {
                                 props.onChange(!props.collaps)
@@ -37,6 +41,7 @@ export function Accordion(props: AccordionProps) {
 
 
 }
+
 
 
 type AccordionTitleProps = {
@@ -66,3 +71,4 @@ function AccordionBody(props: AccordionBodyProps) {
         </div>
     )
 }
+

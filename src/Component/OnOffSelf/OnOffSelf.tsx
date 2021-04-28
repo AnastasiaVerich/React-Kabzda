@@ -43,7 +43,9 @@ export function OnOffSelf(props: onOffSelfProps) {
     }
     const ofClicked=()=>{setOn(false); props.onChange(false)}
     return(
+
         <div>
+            {console.log("OnOffSELF")}
             <div
                 style={OnStyle}
                 onClick={onClicked}

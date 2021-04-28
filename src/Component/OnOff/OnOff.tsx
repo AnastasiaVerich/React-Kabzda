@@ -38,6 +38,7 @@ export function OnOff(props: OnOffType) {
     }
     return(
         <div>
+            {console.log("OnOff")}
             <div style={OnStyle} onClick={()=>{props.onChange(true)}} >On</div>
             <div style={OffStyle} onClick={()=>{props.onChange(false)}}>Off </div>
             <div style={indStyle}> </div>

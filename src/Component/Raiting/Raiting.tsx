@@ -8,7 +8,7 @@ export type RaitingProps = {
 export function Raiting(props: RaitingProps) {
 
     return (
-        <div>
+        <div>  {console.log("Raiting")}
             <Star selected={props.rei > 0} setR={() => { props.setValueV(1) }}/>
             <Star selected={props.rei > 1} setR={() => { props.setValueV(2) }}/>
             <Star selected={props.rei > 2} setR={() => { props.setValueV(3) }}/>
@@ -24,7 +24,6 @@ type StarProps = {
 }
 
 function Star(props: StarProps) {
-    console.log("Star count")
     return <span onClick={props.setR} >{props.selected ? <b>star </b>: 'star '}</span>
 
 }

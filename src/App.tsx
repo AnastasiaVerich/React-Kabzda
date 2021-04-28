@@ -27,6 +27,8 @@ function App() {
         {title: "Dade", value: "3"}
     ]
 
+     const AccordionX=React.memo(Accordion)
+
     return (
         <div className={"App"}>
 
@@ -34,7 +36,7 @@ function App() {
 
             <OnOff on={on} onChange={setOn}/>
             <Raiting rei={reiV} setValueV={setValueV}/>
-            <Accordion text={"MenuSome"}
+            <AccordionX text={"MenuSome"}
                        collaps={collapsV}
                        onChange={setCollaps}
                        items={items}
