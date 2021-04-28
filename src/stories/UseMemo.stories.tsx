@@ -47,7 +47,7 @@ const UsersTabl =(props: { users:string[] })=>{
 const Users =React.memo(UsersTabl)
 
 export const HalpsToReactMemo = () => {
-    console.log("111111")
+    console.log("test")
     const [num, setNum] = useState<number>(10)
     const [users, setUsers] = useState<string[]>(["qqq", "www", "zzz"])
     const filterUsers=useMemo (()=>users.filter((u)=>u.indexOf("w")), [users])
