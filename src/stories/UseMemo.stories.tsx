@@ -1,4 +1,4 @@
-import React, {useMemo, useState} from "react";
+import React, {useCallback, useMemo, useState} from "react";
 
 export default {
     title: 'UseMemo'
@@ -16,7 +16,7 @@ export const DifficultCount = () => {
         let tempA=1
         for (let i = 1; i <= a; i++) {
             let x=0
-            while ( x< 1000000000){
+            while ( x< 100){
                 x++
             }
             tempA = tempA * i
@@ -25,8 +25,6 @@ export const DifficultCount = () => {
     } , [a])
 
     for ( let i=1;i<=b; i++ ){
-        let x=0
-
         resB=resB*i
     }
     return <div>
@@ -47,10 +45,9 @@ const UsersTabl =(props: { users:string[] })=>{
 const Users =React.memo(UsersTabl)
 
 export const HalpsToReactMemo = () => {
-    console.log("test")
     const [num, setNum] = useState<number>(10)
     const [users, setUsers] = useState<string[]>(["qqq", "www", "zzz"])
-    const filterUsers=useMemo (()=>users.filter((u)=>u.indexOf("w")), [users])
+    const filterUsers=useMemo (()=>users.filter((u)=>u.indexOf("z")), [users])
 
     return <>
         <button onClick={()=>{setNum(num+1)}}>+</button>
@@ -59,4 +56,33 @@ export const HalpsToReactMemo = () => {
         <Users users={filterUsers}/>
     </>
 }
+
+export const LikeUseCollback = () => {
+    const [num, setNum] = useState<number>(10)
+    const [book, setBooks] = useState<string[]>(["React", "JS", "TSX"])
+    const addBook=()=>{setBooks([...book, "CSS"])}
+
+    const MemoCollback=useMemo(()=> {
+        return ()=>{setBooks([...book, "CSS"])}
+    }, [book])
+    const MemoCollback2=useCallback(()=> {
+        {setBooks([...book, "CSS"])}
+    }, [book])
+            
+
+    return <>
+        <button onClick={()=>{setNum(num+1)}}>+</button>
+        {num}
+        <Books  addBook={MemoCollback2}/>
+    </>
+}
+
+const BookSecret =(props: {  addBook: ()=>void})=>{
+    console.log("USERS")
+    return <div>
+        {/*{props.books.map((b, i)=>{return<div key={i}>{b}</div>})}*/}
+        <button onClick={props.addBook}>-</button>
+    </div>
+}
+const Books=React.memo(BookSecret)
 
