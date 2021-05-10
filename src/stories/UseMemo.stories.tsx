@@ -68,7 +68,7 @@ export const LikeUseCollback = () => {
     const MemoCollback2=useCallback(()=> {
         {setBooks([...book, "CSS"])}
     }, [book])
-            
+
 
     return <>
         <button onClick={()=>{setNum(num+1)}}>+</button>
