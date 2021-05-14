@@ -69,14 +69,15 @@ export const SetInterval = () => {
 
     </>
 }
+/*
 export const GetTime = () => {
     var a= new Date()
-    a.getMinutes()
-    a.getSeconds()
-    a.getHours()
-    const [hour, setHour] = useState<number>(23)
-    const [min, setMin] = useState<number>(59)
-    const [sec, setSec] = useState<number>(55)
+
+
+
+    const [hour, setHour] = useState<number>(a.getHours()) //a.getHours()
+    const [min, setMin] = useState<number>(a.getMinutes()) //a.getMinutes()
+    const [sec, setSec] = useState<number>(a.getSeconds())// a.getSeconds()
 
 
 
@@ -104,3 +105,4 @@ export const GetTime = () => {
 
     </>
 }
+*/
